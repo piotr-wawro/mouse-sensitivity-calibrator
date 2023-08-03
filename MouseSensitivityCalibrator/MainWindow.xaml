@@ -13,6 +13,9 @@
             <Style TargetType="TextBox">
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
+            <Style TargetType="Button">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
             <Style TargetType="ComboBox">
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
@@ -38,8 +41,8 @@
         <GroupBox Grid.Row="1" Header="Source game">
             <components:MovementFeedback
                 x:Name="source"
-                HorizontalMovement="{Binding Source.Horizontal, Mode=OneWay}"
-                VerticalMovement="{Binding Source.Vertical, Mode=OneWay}"
+                HorizontalMovement="{Binding Source.Horizontal, Mode=TwoWay}"
+                VerticalMovement="{Binding Source.Vertical, Mode=TwoWay}"
                 HorizontalLocked="{Binding Source.HorizontalLocked, Mode=TwoWay}"
                 VerticalLocked="{Binding Source.VerticalLocked, Mode=TwoWay}"/>
         </GroupBox>
@@ -51,8 +54,8 @@
                         x:Name="record1"
                         HorizontalSensitivity="{Binding Record1.SensitivityInput.Horizontal, Mode=OneWayToSource}"
                         VerticalSensitivity="{Binding Record1.SensitivityInput.Vertical, Mode=OneWayToSource}"
-                        HorizontalMovement="{Binding Record1.MovementFeedback.Horizontal, Mode=OneWay}"
-                        VerticalMovement="{Binding Record1.MovementFeedback.Vertical, Mode=OneWay}"
+                        HorizontalMovement="{Binding Record1.MovementFeedback.Horizontal, Mode=TwoWay}"
+                        VerticalMovement="{Binding Record1.MovementFeedback.Vertical, Mode=TwoWay}"
                         HorizontalLocked="{Binding Record1.MovementFeedback.HorizontalLocked, Mode=TwoWay}"
                         VerticalLocked="{Binding Record1.MovementFeedback.VerticalLocked, Mode=TwoWay}"/>
                 </GroupBox>
@@ -62,8 +65,8 @@
                         x:Name="record2"
                         HorizontalSensitivity="{Binding Record2.SensitivityInput.Horizontal, Mode=OneWayToSource}"
                         VerticalSensitivity="{Binding Record2.SensitivityInput.Vertical, Mode=OneWayToSource}"
-                        HorizontalMovement="{Binding Record2.MovementFeedback.Horizontal, Mode=OneWay}"
-                        VerticalMovement="{Binding Record2.MovementFeedback.Vertical, Mode=OneWay}"
+                        HorizontalMovement="{Binding Record2.MovementFeedback.Horizontal, Mode=TwoWay}"
+                        VerticalMovement="{Binding Record2.MovementFeedback.Vertical, Mode=TwoWay}"
                         HorizontalLocked="{Binding Record2.MovementFeedback.HorizontalLocked, Mode=TwoWay}"
                         VerticalLocked="{Binding Record2.MovementFeedback.VerticalLocked, Mode=TwoWay}"/>
                 </GroupBox>

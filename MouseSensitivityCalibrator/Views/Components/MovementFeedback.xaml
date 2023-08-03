@@ -21,10 +21,10 @@
         <Label Grid.Row="1" Grid.Column="0" Content="Vertcal movement:"/>
 
         <controls:TextLock Grid.Row="0" Grid.Column="1"
-                           Text="{Binding HorizontalMovement, ElementName=Root, Mode=OneWay}"
+                           Text="{Binding HorizontalMovement, ElementName=Root, Mode=TwoWay}"
                            IsLocked="{Binding HorizontalLocked, ElementName=Root, Mode=TwoWay}"/>
         <controls:TextLock Grid.Row="1" Grid.Column="1"
-                           Text="{Binding VerticalMovement, ElementName=Root, Mode=OneWay}"
+                           Text="{Binding VerticalMovement, ElementName=Root, Mode=TwoWay}"
                            IsLocked="{Binding VerticalLocked, ElementName=Root, Mode=TwoWay}"/>
     </Grid>
 </UserControl>

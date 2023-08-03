@@ -56,7 +56,7 @@ public partial class MainWindow : Window {
             Path = new PropertyPath(path),
             Converter = SelectConverter(conversion),
             ConverterParameter = cpi,
-            Mode = BindingMode.OneWay
+            Mode = BindingMode.TwoWay
         };
         BindingOperations.SetBinding(target, dp, bind);
     }

@@ -19,8 +19,8 @@
 
         <local:MovementFeedback
             Grid.Row="1"
-            HorizontalMovement="{Binding HorizontalMovement, ElementName=Root, Mode=OneWay}"
-            VerticalMovement="{Binding VerticalMovement, ElementName=Root, Mode=OneWay}"
+            HorizontalMovement="{Binding HorizontalMovement, ElementName=Root, Mode=TwoWay}"
+            VerticalMovement="{Binding VerticalMovement, ElementName=Root, Mode=TwoWay}"
             HorizontalLocked="{Binding HorizontalLocked, ElementName=Root, Mode=TwoWay}"
             VerticalLocked="{Binding VerticalLocked, ElementName=Root, Mode=TwoWay}"/>
     </Grid>

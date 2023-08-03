@@ -13,7 +13,7 @@ public class CpiToCm : MarkupExtension, IValueConverter {
         return ((double)value / (double)parameter * 2.54).ToString("N2");
     }
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-        return null;
+        return Double.Parse((string)value) * (double)parameter / 2.54;
     }
     public override object ProvideValue(IServiceProvider serviceProvider) {
         return this;

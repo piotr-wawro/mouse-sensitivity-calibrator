@@ -12,7 +12,7 @@ public class DoubleToString : MarkupExtension, IValueConverter {
         return ((double)value).ToString("N2");
     }
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-        return null;
+        return Double.Parse((string)value);
     }
     public override object ProvideValue(IServiceProvider serviceProvider) {
         return this;

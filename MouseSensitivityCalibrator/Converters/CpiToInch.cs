@@ -13,7 +13,7 @@ public class CpiToInch : MarkupExtension, IValueConverter {
         return ((double)value / (double)parameter).ToString("N2");
     }
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-        return null;
+        return Double.Parse((string)value) * (double)parameter;
     }
     public override object ProvideValue(IServiceProvider serviceProvider) {
         return this;
