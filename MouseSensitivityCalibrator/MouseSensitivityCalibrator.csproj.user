@@ -7,7 +7,45 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\Components\Configuration.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Controls\HotkeyBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Components\MovementFeedback.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Components\Recording.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Components\SensitivityInput.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Controls\TextLock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Components\Configuration.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\HotkeyBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Components\MovementFeedback.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Components\Recording.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Components\SensitivityInput.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Controls\TextLock.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

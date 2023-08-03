@@ -7,4 +7,26 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\lock.png" />
+    <None Remove="Resources\lock.svg" />
+    <None Remove="Resources\lock_open.png" />
+    <None Remove="Resources\lock_open.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MouseSensitivityCalibrator.RawInput\MouseSensitivityCalibrator.RawInput.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\lock.png" />
+    <Resource Include="Resources\lock.svg" />
+    <Resource Include="Resources\lock_open.png" />
+    <Resource Include="Resources\lock_open.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+  </ItemGroup>
+
 </Project>

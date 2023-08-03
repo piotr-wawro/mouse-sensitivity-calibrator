@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="MouseSensitivityCalibrator.Views.Controls.TextLock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MouseSensitivityCalibrator.Views.Controls"
+             Name="Root"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="textBox" Grid.Column="0"
+                 Width="150" IsReadOnly="True"
+                 Text="{Binding Text, ElementName=Root, Mode=TwoWay}"/>
+
+        <Button Grid.Column="1"
+                Margin="5,0,0,0" ToolTip="Lock"
+                Click="Lock">
+            <Border x:Name="border" BorderThickness="1" BorderBrush="#FF00FF00">
+                <Image x:Name="lockImage" Width="15" Height="15"
+                       Source="pack://application:,,,/Resources/lock_open.png"/>
+            </Border>
+        </Button>
+    </Grid>
+</UserControl>

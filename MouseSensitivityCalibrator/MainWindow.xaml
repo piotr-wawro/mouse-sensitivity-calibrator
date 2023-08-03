@@ -4,9 +4,90 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MouseSensitivityCalibrator"
+        xmlns:components="clr-namespace:MouseSensitivityCalibrator.Views.Components"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Mouse Sensitivity Calibrator"
+        SizeToContent="WidthAndHeight" Topmost="True">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <GroupBox Grid.Row="0" Header="Configuration" >
+            <components:Configuration
+                StartRecording="{Binding Configuration.StartRecording, Mode=TwoWay}"
+                StopRecording="{Binding Configuration.StopRecording, Mode=TwoWay}"
+                SelectedConversion="{Binding Configuration.SelectedConversion, Mode=TwoWay}"
+                Cpi="{Binding Configuration.Cpi, Mode=TwoWay}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Header="Source game">
+            <components:MovementFeedback
+                x:Name="source"
+                HorizontalMovement="{Binding Source.Horizontal, Mode=OneWay}"
+                VerticalMovement="{Binding Source.Vertical, Mode=OneWay}"
+                HorizontalLocked="{Binding Source.HorizontalLocked, Mode=TwoWay}"
+                VerticalLocked="{Binding Source.VerticalLocked, Mode=TwoWay}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Header="Game">
+            <StackPanel>
+                <GroupBox Header="Record 1">
+                    <components:Recording
+                        x:Name="record1"
+                        HorizontalSensitivity="{Binding Record1.SensitivityInput.Horizontal, Mode=OneWayToSource}"
+                        VerticalSensitivity="{Binding Record1.SensitivityInput.Vertical, Mode=OneWayToSource}"
+                        HorizontalMovement="{Binding Record1.MovementFeedback.Horizontal, Mode=OneWay}"
+                        VerticalMovement="{Binding Record1.MovementFeedback.Vertical, Mode=OneWay}"
+                        HorizontalLocked="{Binding Record1.MovementFeedback.HorizontalLocked, Mode=TwoWay}"
+                        VerticalLocked="{Binding Record1.MovementFeedback.VerticalLocked, Mode=TwoWay}"/>
+                </GroupBox>
+
+                <GroupBox Header="Record 2">
+                    <components:Recording
+                        x:Name="record2"
+                        HorizontalSensitivity="{Binding Record2.SensitivityInput.Horizontal, Mode=OneWayToSource}"
+                        VerticalSensitivity="{Binding Record2.SensitivityInput.Vertical, Mode=OneWayToSource}"
+                        HorizontalMovement="{Binding Record2.MovementFeedback.Horizontal, Mode=OneWay}"
+                        VerticalMovement="{Binding Record2.MovementFeedback.Vertical, Mode=OneWay}"
+                        HorizontalLocked="{Binding Record2.MovementFeedback.HorizontalLocked, Mode=TwoWay}"
+                        VerticalLocked="{Binding Record2.MovementFeedback.VerticalLocked, Mode=TwoWay}"/>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="3" Header="Output">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Set horizontal sensitivity to:"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Set vertical sensitivity to:"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="Calculate" Command="{Binding CalculateSensitivity, Mode=OneTime}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True" Text="{Binding OutputHorizontalSensitivity, Mode=OneWay}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True" Text="{Binding OutputVerticalSensitivity, Mode=OneWay}"/>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
