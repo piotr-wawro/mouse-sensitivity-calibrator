@@ -7,7 +7,7 @@ namespace MouseSensitivityCalibrator.ViewModels.Components;
 
 class ConfigurationViewModel : BaseViewModel {
     private double _cpi = 600;
-    private ConversionType _selectedConversion = ConversionType.CountsPerInch;
+    private ConversionType _selectedConversion = ConversionType.Counts;
     private Hotkey _startRecording = new Hotkey(Key.D1, ModifierKeys.Control);
     private Hotkey _stopRecording = new Hotkey(Key.D4, ModifierKeys.Control);
 

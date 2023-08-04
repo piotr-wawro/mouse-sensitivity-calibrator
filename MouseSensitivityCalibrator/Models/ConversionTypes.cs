@@ -4,8 +4,8 @@ namespace MouseSensitivityCalibrator.Models;
 
 
 public enum ConversionType {
-    [Description("Counts Pre Inch")]
-    CountsPerInch,
+    [Description("Counts")]
+    Counts,
     [Description("Centimeters")]
     Centimeters,
     [Description("Inches")]

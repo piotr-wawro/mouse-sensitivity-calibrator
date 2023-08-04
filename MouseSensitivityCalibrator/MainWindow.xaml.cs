@@ -62,7 +62,7 @@ public partial class MainWindow : Window {
     }
 
     private IValueConverter SelectConverter(ConversionType conversion) {
-        if(conversion == ConversionType.CountsPerInch) {
+        if(conversion == ConversionType.Counts) {
             return new DoubleToString();
         }
         else if(conversion == ConversionType.Centimeters) {
