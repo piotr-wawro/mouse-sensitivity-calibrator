@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Horizontal movement:"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Vertcal movement:"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Vertical movement:"/>
 
         <controls:TextLock Grid.Row="0" Grid.Column="1"
                            Text="{Binding HorizontalMovement, ElementName=Root, Mode=TwoWay}"

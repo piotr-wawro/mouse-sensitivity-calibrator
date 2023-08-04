@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Horizontal sensitivity:"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Vertcal sensitivity:"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Vertical sensitivity:"/>
 
         <TextBox Grid.Row="0" Grid.Column="1"
                  Text="{Binding HorizontalSensitivity, ElementName=Root, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
