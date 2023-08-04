@@ -5,6 +5,8 @@ namespace MouseSensitivityCalibrator.Views.Components;
 
 
 public partial class Recording : UserControl {
+    public static readonly DependencyProperty LabelProperty =
+        DependencyProperty.Register("Label", typeof(string), typeof(Recording));
     public static readonly DependencyProperty HorizontalSensitivityProperty =
         DependencyProperty.Register("HorizontalSensitivity", typeof(string), typeof(Recording));
     public static readonly DependencyProperty VerticalSensitivityProperty =
@@ -18,6 +20,10 @@ public partial class Recording : UserControl {
     public static readonly DependencyProperty VerticalLockedProperty =
         DependencyProperty.Register("VerticalLocked", typeof(bool), typeof(Recording));
 
+    public string Label {
+        get { return (string)GetValue(LabelProperty); }
+        set { SetValue(LabelProperty, value); }
+    }
     public string HorizontalSensitivity {
         get { return (string)GetValue(HorizontalSensitivityProperty); }
         set { SetValue(HorizontalSensitivityProperty, value); }

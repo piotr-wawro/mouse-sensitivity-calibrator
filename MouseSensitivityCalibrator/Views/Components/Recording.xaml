@@ -6,19 +6,22 @@
              xmlns:local="clr-namespace:MouseSensitivityCalibrator.Views.Components"
              Name="Root"
              mc:Ignorable="d">
-    <Grid>
+    <Grid Grid.IsSharedSizeScope="True">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <Label Grid.Row="0" Content="{Binding Label, ElementName=Root, Mode=OneWay}"/>
+
         <local:SensitivityInput
-            Grid.Row="0"
+            Grid.Row="1"
             HorizontalSensitivity="{Binding HorizontalSensitivity, ElementName=Root, Mode=OneWayToSource}"
             VerticalSensitivity="{Binding VerticalSensitivity, ElementName=Root, Mode=OneWayToSource}"/>
 
         <local:MovementFeedback
-            Grid.Row="1"
+            Grid.Row="2"
             HorizontalMovement="{Binding HorizontalMovement, ElementName=Root, Mode=TwoWay}"
             VerticalMovement="{Binding VerticalMovement, ElementName=Root, Mode=TwoWay}"
             HorizontalLocked="{Binding HorizontalLocked, ElementName=Root, Mode=TwoWay}"

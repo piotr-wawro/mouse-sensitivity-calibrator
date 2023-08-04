@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Mouse Sensitivity Calibrator"
         SizeToContent="WidthAndHeight" Topmost="True">
-    <Grid>
+    <Grid Grid.IsSharedSizeScope="True">
         <Grid.Resources>
             <Style TargetType="TextBox">
                 <Setter Property="VerticalAlignment" Value="Center"/>
@@ -49,27 +49,25 @@
 
         <GroupBox Grid.Row="2" Header="Game">
             <StackPanel>
-                <GroupBox Header="Record 1">
-                    <components:Recording
-                        x:Name="record1"
-                        HorizontalSensitivity="{Binding Record1.SensitivityInput.Horizontal, Mode=OneWayToSource}"
-                        VerticalSensitivity="{Binding Record1.SensitivityInput.Vertical, Mode=OneWayToSource}"
-                        HorizontalMovement="{Binding Record1.MovementFeedback.Horizontal, Mode=TwoWay}"
-                        VerticalMovement="{Binding Record1.MovementFeedback.Vertical, Mode=TwoWay}"
-                        HorizontalLocked="{Binding Record1.MovementFeedback.HorizontalLocked, Mode=TwoWay}"
-                        VerticalLocked="{Binding Record1.MovementFeedback.VerticalLocked, Mode=TwoWay}"/>
-                </GroupBox>
+                <components:Recording
+                    x:Name="record1"
+                    Label="Record 1"
+                    HorizontalSensitivity="{Binding Record1.SensitivityInput.Horizontal, Mode=OneWayToSource}"
+                    VerticalSensitivity="{Binding Record1.SensitivityInput.Vertical, Mode=OneWayToSource}"
+                    HorizontalMovement="{Binding Record1.MovementFeedback.Horizontal, Mode=TwoWay}"
+                    VerticalMovement="{Binding Record1.MovementFeedback.Vertical, Mode=TwoWay}"
+                    HorizontalLocked="{Binding Record1.MovementFeedback.HorizontalLocked, Mode=TwoWay}"
+                    VerticalLocked="{Binding Record1.MovementFeedback.VerticalLocked, Mode=TwoWay}"/>
 
-                <GroupBox Header="Record 2">
-                    <components:Recording
-                        x:Name="record2"
-                        HorizontalSensitivity="{Binding Record2.SensitivityInput.Horizontal, Mode=OneWayToSource}"
-                        VerticalSensitivity="{Binding Record2.SensitivityInput.Vertical, Mode=OneWayToSource}"
-                        HorizontalMovement="{Binding Record2.MovementFeedback.Horizontal, Mode=TwoWay}"
-                        VerticalMovement="{Binding Record2.MovementFeedback.Vertical, Mode=TwoWay}"
-                        HorizontalLocked="{Binding Record2.MovementFeedback.HorizontalLocked, Mode=TwoWay}"
-                        VerticalLocked="{Binding Record2.MovementFeedback.VerticalLocked, Mode=TwoWay}"/>
-                </GroupBox>
+                <components:Recording
+                    x:Name="record2"
+                    Label="Record 2"
+                    HorizontalSensitivity="{Binding Record2.SensitivityInput.Horizontal, Mode=OneWayToSource}"
+                    VerticalSensitivity="{Binding Record2.SensitivityInput.Vertical, Mode=OneWayToSource}"
+                    HorizontalMovement="{Binding Record2.MovementFeedback.Horizontal, Mode=TwoWay}"
+                    VerticalMovement="{Binding Record2.MovementFeedback.Vertical, Mode=TwoWay}"
+                    HorizontalLocked="{Binding Record2.MovementFeedback.HorizontalLocked, Mode=TwoWay}"
+                    VerticalLocked="{Binding Record2.MovementFeedback.VerticalLocked, Mode=TwoWay}"/>
             </StackPanel>
         </GroupBox>
 
@@ -77,7 +75,7 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*" SharedSizeGroup="A"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
