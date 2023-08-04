@@ -47,7 +47,7 @@
                 VerticalLocked="{Binding Source.VerticalLocked, Mode=TwoWay}"/>
         </GroupBox>
 
-        <GroupBox Grid.Row="2" Header="Game">
+        <GroupBox Grid.Row="2" Header="Target game">
             <StackPanel>
                 <components:Recording
                     x:Name="record1"
