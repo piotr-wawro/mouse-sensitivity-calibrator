@@ -12,7 +12,7 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="textBox" Grid.Column="0" Width="150"
+        <TextBox x:Name="textBox" Grid.Column="0" Width="160"
                  Text="{Binding Text, ElementName=Root, Mode=TwoWay}"/>
 
         <Button Grid.Column="1" Margin="5,0,0,0"

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MouseSensitivityCalibrator"
         xmlns:components="clr-namespace:MouseSensitivityCalibrator.Views.Components"
         mc:Ignorable="d"
-        Title="Mouse Sensitivity Calibrator"
+        Title="SensiSync SuperCalibrate Pro 6000"
         SizeToContent="WidthAndHeight" Topmost="True">
     <Grid Grid.IsSharedSizeScope="True">
         <Grid.Resources>
